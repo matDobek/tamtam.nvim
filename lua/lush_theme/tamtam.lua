@@ -45,18 +45,29 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local color__black = hsl(0, 0, 20)
+local color__black = hsl(0, 0, 21)
 local color__white = hsl(0, 0, 89)
 
-local color__bg            = hsl(23, 62, 17)
-local color__bg_add        = color__bg.lighten(01)
-local color__system1       = hsl(33, 72, 22)
-local color__system2       = hsl(70, 52, 41)
-local color__comment       = hsl(33, 50, 37)
-local color__primary1      = hsl(41, 96, 53)
-local color__primary2      = hsl(23, 94, 52)
+-- tmux
+--local color__bg            = hsl(23, 62, 17)
+--local color__bg_add        = color__bg.lighten(01)
+--local color__system1       = hsl(33, 72, 22)
+--local color__system2       = hsl(70, 52, 41)
+--local color__comment       = hsl(33, 50, 37)
+--local color__primary1      = hsl(41, 96, 53)
+--local color__primary2      = hsl(23, 94, 52)
+--local color__secondary1    = color__primary1
+--local color__secondary2    = color__primary1.lighten(30)
+
+local color__bg            = hsl(20, 34, 08)
+local color__bg_add        = color__bg.lighten(05)
+local color__system1       = hsl(70, 34, 34)
+local color__system2       = hsl(70, 55, 55)
+local color__comment       = hsl(30, 34, 34)
+local color__primary1      = hsl(40, 89, 55)
+local color__primary2      = hsl(20, 89, 55)
 local color__secondary1    = color__primary1
-local color__secondary2    = color__primary1.lighten(30)
+local color__secondary2    = color__primary1.lighten(34)
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
