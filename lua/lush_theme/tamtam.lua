@@ -77,6 +77,11 @@ local theme = lush(function()
     WarningMsg   { bg = Comment.fg, fg = Comment.bg }, -- warning messages
     ErrorMsg     { bg = Comment.fg, fg = Comment.bg }, -- error messages on the command line
 
+    SpecialKey   { bg = color__bg, fg = color__comment }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+    Whitespace   { bg = color__bg, fg = color__comment }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    NonText      { bg = color__bg, fg = color__comment }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    EndOfBuffer  { bg = color__bg, fg = color__comment }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+
     LineNr       { bg = color__bg, fg = color__system1 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { bg = color__bg, fg = color__system1 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     StatusLine   { bg = color__bg, fg = color__system1 }, -- status line of current window
@@ -153,7 +158,6 @@ local theme = lush(function()
     -- DiffChange   { }, -- diff mode: Changed line |diff.txt|
     -- DiffDelete   { }, -- diff mode: Deleted line |diff.txt|
     -- DiffText     { }, -- diff mode: Changed text within a changed line |diff.txt|
-    -- EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     -- VertSplit    { }, -- the column separating vertically split windows
@@ -162,13 +166,11 @@ local theme = lush(function()
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
-    -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     -- NormalNC     { }, -- normal text in non-current windows
     -- PmenuSbar    { }, -- Popup menu: scrollbar.
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    -- SpecialKey   { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     -- SpellBad     { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
@@ -177,7 +179,6 @@ local theme = lush(function()
     -- TabLineFill  { }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
-    -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
 
