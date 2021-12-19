@@ -59,7 +59,7 @@ local color__white = hsl(0, 0, 89)
 --local color__secondary1    = color__primary1
 --local color__secondary2    = color__primary1.lighten(30)
 
-local color__bg            = hsl(70, 13, 13)
+local color__bg            = hsl(30, 21, 13)
 local color__bg_add        = color__bg.lighten(05)
 local color__system1       = hsl(70, 34, 34)
 local color__system2       = hsl(70, 55, 55)
