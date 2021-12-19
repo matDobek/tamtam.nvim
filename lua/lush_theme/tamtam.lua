@@ -48,26 +48,16 @@ local hsl = lush.hsl
 local color__black = hsl(0, 0, 21)
 local color__white = hsl(0, 0, 89)
 
--- tmux
---local color__bg            = hsl(23, 62, 17)
---local color__bg_add        = color__bg.lighten(01)
---local color__system1       = hsl(33, 72, 22)
---local color__system2       = hsl(70, 52, 41)
---local color__comment       = hsl(33, 50, 37)
---local color__primary1      = hsl(41, 96, 53)
---local color__primary2      = hsl(23, 94, 52)
---local color__secondary1    = color__primary1
---local color__secondary2    = color__primary1.lighten(30)
-
-local color__bg            = hsl(30, 21, 13)
+local color__bg            = hsl(10, 0, 15)
 local color__bg_add        = color__bg.lighten(05)
-local color__system1       = hsl(70, 34, 34)
+local color__system0       = hsl(10, 08, 34)
+local color__system1       = hsl(90, 40, 30)
 local color__system2       = hsl(70, 55, 55)
-local color__comment       = hsl(30, 34, 34)
-local color__primary1      = hsl(40, 89, 55)
-local color__primary2      = hsl(20, 89, 55)
-local color__secondary1    = color__primary1
-local color__secondary2    = color__primary1.lighten(34)
+local color__primary1      = hsl(43, 99, 50)
+local color__primary2      = hsl(21, 99, 50)
+local color__primary3      = hsl(32, 99, 30)
+
+-- Maybe colors:
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -81,23 +71,25 @@ local theme = lush(function()
     NormalFloat  { bg = color__bg_add }, -- Normal text in floating windows.
     Pmenu        { bg = color__bg_add }, -- Popup menu: normal item.
 
-    Comment      { bg = color__bg, fg = color__comment }, -- any comment
+    Comment      { bg = color__bg, fg = color__system0 }, -- any comment
     Error        { bg = Comment.fg, fg = Comment.bg }, -- (preferred) any erroneous construct
     Todo         { bg = Comment.fg, fg = Comment.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     ColorColumn  { bg = Comment.fg, fg = Comment.bg }, -- used for the columns set with 'colorcolumn'
     WarningMsg   { bg = Comment.fg, fg = Comment.bg }, -- warning messages
     ErrorMsg     { bg = Comment.fg, fg = Comment.bg }, -- error messages on the command line
 
-    SpecialKey   { bg = color__bg, fg = color__comment }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-    Whitespace   { bg = color__bg, fg = color__comment }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    NonText      { bg = color__bg, fg = color__comment }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    EndOfBuffer  { bg = color__bg, fg = color__comment }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    SpecialKey   { bg = color__bg, fg = color__system0 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+    Whitespace   { bg = color__bg, fg = color__system0 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    NonText      { bg = color__bg, fg = color__system0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    EndOfBuffer  { bg = color__bg, fg = color__system0 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 
-    LineNr       { bg = color__bg, fg = color__system1 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr { bg = color__bg, fg = color__system1 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    LineNr       { bg = color__bg, fg = color__system0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    CursorLineNr { bg = color__bg, fg = color__system0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    StatusLineNC { bg = color__bg, fg = color__system0 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+
     StatusLine   { bg = color__bg, fg = color__system1 }, -- status line of current window
-    StatusLineNC { bg = color__bg, fg = color__system1 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     VertSplit    { bg = color__bg, fg = color__system1 }, -- the column separating vertically split windows
+    MatchParen   { bg = color__system1, fg = color__bg }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 
     MsgArea      { bg = color__bg, fg = color__system2 }, -- status line of current window
     PmenuSel     { bg = color__bg, fg = color__system2 }, -- Popup menu: selected item.
@@ -105,7 +97,6 @@ local theme = lush(function()
     Search       { bg = color__system2, fg = color__bg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch    { bg = color__system2, fg = color__bg }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Visual       { bg = color__system2, fg = color__bg }, -- Visual mode selection
-    MatchParen   { bg = color__system2, fg = color__bg }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 
     Folded       { bg = color__primary1, fg = color__bg }, -- line used for closed folds
     Title        { bg = color__bg, fg = color__primary2 }, -- titles for output from ":set all", ":autocmd" etc.
@@ -114,9 +105,9 @@ local theme = lush(function()
     --- --- ---
 
     Identifier     { bg = color__bg, fg = color__primary2 }, -- (preferred) any variable name
-    Function       { bg = color__bg, fg = color__secondary1 }, -- function name (also: methods for classes)
+    Function       { bg = color__bg, fg = color__primary3 }, -- function name (also: methods for classes)
 
-    Type           { bg = color__bg, fg = color__secondary2 }, -- (preferred) int, long, char, etc.
+    Type           { bg = color__bg, fg = color__primary3 }, -- (preferred) int, long, char, etc.
     -- StorageClass   { }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
