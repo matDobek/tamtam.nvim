@@ -45,19 +45,28 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local color__black = hsl(0, 0, 21)
-local color__white = hsl(0, 0, 89)
+local color__black = hsl(0, 0, 13)
+local color__white = hsl(0, 0, 95)
 
-local color__bg            = hsl(10, 0, 15)
-local color__bg_add        = color__bg.lighten(05)
-local color__system0       = hsl(10, 08, 34)
-local color__system1       = hsl(90, 40, 30)
-local color__system2       = hsl(70, 55, 55)
-local color__primary1      = hsl(43, 99, 50)
-local color__primary2      = hsl(21, 99, 50)
-local color__primary3      = hsl(32, 99, 30)
+local color__bg            = hsl(30, 15, 14)
+local color__bg_add        = color__bg.lighten(10)
+local color__system0       = hsl(30, 15, 32)
+local color__system1       = hsl(70, 50, 50)
+local color__system2       = color__system1
+local color__primary1      = hsl(40, 99, 50)
+local color__primary2      = hsl(30, 99, 50)
+local color__primary3      = hsl(20, 99, 50)
 
--- Maybe colors:
+-- black  -- hsl(0, 0, 13)    -- #212121
+-- white  -- hsl(0, 0, 95)    -- #f5f5f5
+-- bg     -- hsl(30, 15, 14)  -- #29241E
+-- bg2    -- hsl(30, 15, 32)  -- #5E5245
+-- 1      -- hsl(20, 99, 50)  -- #FE5501
+-- 2      -- hsl(30, 99, 50)  -- #FE7F01
+-- yellow -- hsl(40, 99, 50)  -- #FEAA01
+-- red    -- hsl(0, 55, 50)   -- #C63939
+-- green  -- hsl(70, 55, 50)  -- #AEC639
+-- blue   -- hsl(200, 55, 50) -- #3997C6
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -89,7 +98,7 @@ local theme = lush(function()
 
     StatusLine   { bg = color__bg, fg = color__system1 }, -- status line of current window
     VertSplit    { bg = color__bg, fg = color__system1 }, -- the column separating vertically split windows
-    MatchParen   { bg = color__system1, fg = color__bg }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen   { bg = color__bg, fg = color__system1 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 
     MsgArea      { bg = color__bg, fg = color__system2 }, -- status line of current window
     PmenuSel     { bg = color__bg, fg = color__system2 }, -- Popup menu: selected item.
