@@ -45,37 +45,26 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local color__black = hsl(0, 0, 13)
-local color__white = hsl(0, 30, 90)
+local color__black = hsl(260, 10, 10)
+local color__white = hsl(260, 50, 95)
 
---local color__bg       = hsl(310, 10, 10)
---local color__bg_add   = color__bg.lighten(10)
---local color__system0  = hsl(310, 15, 35)
---local color__system1  = hsl(160, 75, 65)
---local color__system2  = hsl(160, 40, 40)
---local color__primary1 = hsl(310, 80, 80)
---local color__primary2 = hsl(270, 80, 80)
---local color__primary3 = hsl(230, 80, 80)
-
-local color__bg       = hsl(0, 10, 10)
+local color__bg       = hsl(260, 15, 15)
 local color__bg_add   = color__bg.lighten(10)
-local color__system0  = hsl(0, 10, 30)
-local color__system1  = hsl(180, 40, 80)
-local color__system2  = hsl(180, 40, 80)
-local color__primary1 = hsl(30, 40, 80)
-local color__primary2 = hsl(30, 40, 60)
-local color__primary3 = hsl(30, 40, 40)
+local color__system0  = hsl(260, 15, 35)
+local color__system1  = hsl(160, 75, 65)
+local color__system2  = hsl(160, 75, 67)
+local color__primary1 = hsl(260, 75, 65)
+local color__primary2 = hsl(290, 75, 65)
+local color__primary3 = hsl(230, 75, 65)
 
--- black  -- hsl(0, 0, 13)    -- #1C1717
--- white  -- hsl(0, 30, 90)   -- #EEDDDD
--- bg     -- hsl(30, 15, 14)  -- #1C1717
--- bg2    -- hsl(30, 15, 32)  -- #544545
--- 1      -- hsl(30, 40, 60)  -- #C29970
--- 2      -- hsl(30, 40, 40)  -- #8F673D
--- yellow -- hsl(30, 40, 80)  -- #BA8C5E
--- red    -- hsl(0, 40, 80)   -- #E0B8B8
--- green  -- hsl(90, 40, 80)  -- #AEC639
--- blue   -- hsl(180, 40, 80) -- #B8E0E0
+--local color__bg       = hsl(0, 10, 10)
+--local color__bg_add   = color__bg.lighten(10)
+--local color__system0  = hsl(0, 10, 30)
+--local color__system1  = hsl(180, 40, 80)
+--local color__system2  = hsl(180, 40, 80)
+--local color__primary1 = hsl(30, 40, 80)
+--local color__primary2 = hsl(30, 40, 60)
+--local color__primary3 = hsl(30, 40, 40)
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
