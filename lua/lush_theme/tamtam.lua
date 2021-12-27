@@ -45,26 +45,29 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local color__black = hsl(260, 10, 10)
-local color__white = hsl(260, 50, 95)
+--local color__black = hsl(260, 10, 10)
+--local color__white = hsl(260, 50, 95)
 
-local color__bg       = hsl(260, 15, 15)
-local color__bg_add   = color__bg.lighten(10)
-local color__system0  = hsl(260, 15, 35)
-local color__system1  = hsl(160, 75, 65)
-local color__system2  = hsl(160, 75, 67)
-local color__primary1 = hsl(260, 75, 65)
-local color__primary2 = hsl(290, 75, 65)
-local color__primary3 = hsl(230, 75, 65)
-
---local color__bg       = hsl(0, 10, 10)
+--local color__bg       = hsl(260, 15, 15)
 --local color__bg_add   = color__bg.lighten(10)
---local color__system0  = hsl(0, 10, 30)
---local color__system1  = hsl(180, 40, 80)
---local color__system2  = hsl(180, 40, 80)
---local color__primary1 = hsl(30, 40, 80)
---local color__primary2 = hsl(30, 40, 60)
---local color__primary3 = hsl(30, 40, 40)
+--local color__system0  = hsl(260, 15, 35)
+--local color__system1  = hsl(160, 75, 65)
+--local color__system2  = hsl(160, 75, 67)
+--local color__primary1 = hsl(260, 75, 65)
+--local color__primary2 = hsl(290, 75, 65)
+--local color__primary3 = hsl(230, 75, 65)
+
+local color__black = hsl(25, 10, 10)
+local color__white = hsl(25, 50, 95)
+
+local color__bg       = hsl(0, 10, 14)
+local color__bg_add   = color__bg.lighten(10)
+local color__system0  = hsl(0, 10, 30)
+local color__system1  = hsl(170, 80, 80)
+local color__system2  = hsl(170, 50, 80)
+local color__primary1 = hsl(25, 80, 70)
+local color__primary2 = hsl(25, 80, 60)
+local color__primary3 = hsl(25, 80, 30)
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -140,7 +143,7 @@ local theme = lush(function()
     -- Macro          { }, --  same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    -- Special        { }, -- (preferred) any special symbol
+    Special        { bg = color__bg, fg = color__primary2 }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     -- Delimiter      { }, --  character that needs attention
