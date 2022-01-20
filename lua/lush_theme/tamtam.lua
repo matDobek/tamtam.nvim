@@ -55,7 +55,7 @@ local color__system1  = hsl(180, 95, 50) -- #06F9F9
 local color__system2  = hsl(300, 95, 50) -- #F906F9
 local color__primary1 = hsl(10, 45, 70) -- #D59C90
 local color__primary2 = hsl(10, 35, 50) -- #AC6253
-local color__primary4 = hsl(10, 25, 30) -- #604039
+local color__primary3 = hsl(10, 25, 30) -- #604039
 
 --local color__system1  = hsl(170, 80, 80)
 --local color__system2  = hsl(170, 50, 80)
